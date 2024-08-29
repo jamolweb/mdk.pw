@@ -11,15 +11,14 @@ const translations = {
 		formTitle: 'Design Order Form',
 		selectDesignType: 'Select Design Type',
 		customDesignTypePlaceholder: 'Enter your custom design type',
-		designTextPlaceholder: 'Enter your design text',
-		colorPlaceholder: 'Enter your preferred color',
+		designTextPlaceholder: 'Additional information and tips',
+		colorPlaceholder: 'Priority colors in the work (optional. You can specify the desired shades)',
 		designElementsPlaceholder: 'Enter design elements (e.g., car or character)',
-		widthPlaceholder: 'Enter width (px, sm, vh)',
-		heightPlaceholder: 'Enter height (px, sm, vh)',
-		fileSizePlaceholder: 'Enter file size (MB, GB, TB)',
+		widthPlaceholder: 'Expanding the work (optional)',
+		fileSizePlaceholder: 'Enter file size (Optional)',
 		additionalInfoPlaceholder: 'Additional information or suggestions',
 		telegramUsernamePlaceholder: 'Enter your Telegram username',
-		submitButton: 'Submit Order',
+		submitButton: 'Submit',
 		successMessage: 'Your order has been successfully sent!',
 		designTypes: [
 			{ value: 'avatar', label: 'Avatar' },
@@ -35,17 +34,16 @@ const translations = {
 		formTitle: 'Форма заказа дизайна',
 		selectDesignType: 'Выберите тип дизайна',
 		customDesignTypePlaceholder: 'Укажите свой вариант дизайна',
-		designTextPlaceholder: 'Введите текст дизайна',
-		colorPlaceholder: 'Введите предпочтительный цвет',
+		designTextPlaceholder: 'Дополнительная информация и советы',
+		colorPlaceholder: 'Приоритетные цвета в работе (необязательно. Вы можете указать желаемые оттенки)',
 		designElementsPlaceholder:
 			'Введите элементы дизайна (например, машина или персонаж)',
-		widthPlaceholder: 'Введите ширину (px, sm, vh)',
-		heightPlaceholder: 'Введите высоту (px, sm, vh)',
-		fileSizePlaceholder: 'Введите размер файла (МБ, ГБ, ТБ)',
+		widthPlaceholder: 'Расширение работы (необязательно)',
+		fileSizePlaceholder: 'введите размер файла (Необязательно)',
 		additionalInfoPlaceholder: 'Дополнительная информация или советы',
 		telegramUsernamePlaceholder:
 			'Оставьте свой username для связи через Telegram',
-		submitButton: 'Отправить заказ',
+		submitButton: 'Отправить',
 		successMessage: 'Ваш заказ успешно отправлен!',
 		designTypes: [
 			{ value: 'avatar', label: 'Аватарка' },
@@ -190,7 +188,7 @@ const DesignOrderForm: React.FC = () => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className='max-w-full mx-auto mt-10 p-6 bg-[#191919] rounded-lg shadow-xl'
+			className='max-w-full mx-auto mt-10 p-6 bg-[#191919] shadow-xl'
 		>
 			<h2 className='text-2xl font-bold mb-6 text-white'>{t.formTitle}</h2>
 
@@ -200,7 +198,7 @@ const DesignOrderForm: React.FC = () => {
 					name='designType'
 					value={formData.designType}
 					onChange={handleInputChange}
-					className={`w-full p-2 border rounded bg-[#222222] text-white`}
+					className={`w-full p-2  bg-[#222222] text-white`}
 				>
 					<option value='' disabled>
 						{t.selectDesignType}
@@ -220,18 +218,17 @@ const DesignOrderForm: React.FC = () => {
 					value={formData.customDesignType}
 					onChange={handleInputChange}
 					placeholder={t.customDesignTypePlaceholder}
-					className={`w-full p-2 border rounded mb-4 bg-[#222222] text-white`}
+					className={`w-full p-2  mb-4 bg-[#222222] text-white`}
 				/>
 			)}
 
-			<input
-				type='text'
+			<textarea
 				name='designText'
 				value={formData.designText}
 				onChange={handleInputChange}
 				placeholder={t.designTextPlaceholder}
-				className={`w-full p-2 border rounded mb-4 bg-[#222222] text-white`}
-			/>
+				className={`w-full p-2  mb-4 bg-[#222222] text-white`}
+			></textarea>
 
 			<input
 				type='text'
@@ -239,7 +236,7 @@ const DesignOrderForm: React.FC = () => {
 				value={formData.color}
 				onChange={handleInputChange}
 				placeholder={t.colorPlaceholder}
-				className={`w-full p-2 border rounded mb-4 bg-[#222222] text-white`}
+				className={`w-full p-2  mb-4 bg-[#222222] text-white`}
 			/>
 
 			<input
@@ -248,28 +245,18 @@ const DesignOrderForm: React.FC = () => {
 				value={formData.designElements}
 				onChange={handleInputChange}
 				placeholder={t.designElementsPlaceholder}
-				className={`w-full p-2 border rounded mb-4 bg-[#222222] text-white`}
+				className={`w-full p-2  mb-4 bg-[#222222] text-white`}
 			/>
 
-			<div className='flex gap-3'>
 				<input
 					type='text'
 					name='width'
 					value={formData.width}
 					onChange={handleInputChange}
 					placeholder={t.widthPlaceholder}
-					className={`w-full p-2 border rounded mb-4 bg-[#222222] text-white`}
+					className={`w-full p-2  mb-4 bg-[#222222] text-white`}
 				/>
 
-				<input
-					type='text'
-					name='height'
-					value={formData.height}
-					onChange={handleInputChange}
-					placeholder={t.heightPlaceholder}
-					className={`w-full p-2 border rounded mb-4 bg-[#222222] text-white`}
-				/>
-			</div>
 
 			<input
 				type='text'
@@ -277,7 +264,7 @@ const DesignOrderForm: React.FC = () => {
 				value={formData.fileSize}
 				onChange={handleInputChange}
 				placeholder={t.fileSizePlaceholder}
-				className={`w-full p-2 border rounded mb-4 bg-[#222222] text-white`}
+				className={`w-full p-2  mb-4 bg-[#222222] text-white`}
 			/>
 
 			<textarea
@@ -285,7 +272,7 @@ const DesignOrderForm: React.FC = () => {
 				value={formData.additionalInfo}
 				onChange={handleInputChange}
 				placeholder={t.additionalInfoPlaceholder}
-				className={`w-full p-2 border rounded mb-4 bg-[#222222] text-white`}
+				className={`w-full p-2  mb-4 bg-[#222222] text-white`}
 			></textarea>
 
 			<input
@@ -294,12 +281,12 @@ const DesignOrderForm: React.FC = () => {
 				value={formData.telegramUsername}
 				onChange={handleInputChange}
 				placeholder={t.telegramUsernamePlaceholder}
-				className={`w-full p-2 border rounded mb-4 bg-[#222222] text-white`}
+				className={`w-full p-2  mb-4 bg-[#222222] text-white`}
 			/>
 
 			<button
 				type='submit'
-				className='w-full p-2 border rounded bg-[#E32879] text-white'
+				className='w-full p-2  bg-[#e32879] text-white'
 			>
 				{t.submitButton}
 			</button>
