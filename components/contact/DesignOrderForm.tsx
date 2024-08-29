@@ -123,12 +123,12 @@ const DesignOrderForm: React.FC = () => {
 		const { name, value, type, selectedOptions }: any = e.target
 
 		if (type === 'select-one') {
-			setFormData(prev => ({
+			setFormData((prev: any) => ({
 				...prev,
 				[name]: selectedOptions[0].value,
 			}))
 		} else {
-			setFormData(prev => ({
+			setFormData((prev: any) => ({
 				...prev,
 				[name]: value,
 			}))
@@ -208,8 +208,7 @@ const DesignOrderForm: React.FC = () => {
 			</div>
 
 			{formData.designType === 'other' && (
-				<input
-					type='text'
+				<textarea
 					name='customDesignType'
 					value={formData.customDesignType}
 					onChange={handleInputChange}
@@ -218,8 +217,7 @@ const DesignOrderForm: React.FC = () => {
 				/>
 			)}
 
-			<input
-				type='text'
+			<textarea
 				name='designText'
 				value={formData.designText}
 				onChange={handleInputChange}
