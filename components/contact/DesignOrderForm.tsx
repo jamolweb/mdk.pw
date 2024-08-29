@@ -13,7 +13,7 @@ const translations = {
 		customDesignTypePlaceholder: 'Enter your custom design type',
 		designTextPlaceholder: 'Describe your TOR. What would you like to see in your work, or attach a link to the TOR',
 		colorPlaceholder: 'Priority colors in the work (optional. You can specify the desired shades)',
-		designElementsPlaceholder: 'Enter design elements (e.g., car or character)',
+		designElementsPlaceholder: 'Optionally add any elements you want to add to the design (such as a car or a sign).',
 		widthPlaceholder: 'Expanding the work (Unsigned)',
 		fileSizePlaceholder: 'enter the file size (optional)',
 		additionalInfoPlaceholder: 'Additional information or suggestions',
@@ -37,7 +37,7 @@ const translations = {
 		designTextPlaceholder: 'Опишите ваше ТЗ. Чтобы вы хотели увидеть в своей работе, либо приложите ссылку на ТЗ',
 		colorPlaceholder: 'Приоритетные цвета в работе (необязательно. Вы можете указать желаемые оттенки)',
 		designElementsPlaceholder:
-			'Введите элементы дизайна (например, машина или персонаж)',
+			'При желании включите элементы, которые вы хотите добавить в дизайн (например, автомобиль или символ).',
 		widthPlaceholder: 'Расширение работы (Необязательно)',
 		fileSizePlaceholder: 'Bведите размер файла  (необязательно)',
 		additionalInfoPlaceholder: 'Дополнительная информация или советы',
